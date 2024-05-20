@@ -8,7 +8,7 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
-    "src",
+    "!src",
     "lib",
     "android",
     "ios",
