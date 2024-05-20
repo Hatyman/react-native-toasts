@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import React, { type FC, Fragment } from 'react';
 import { Toast, useControlledToasts } from '@hatyman/react-native-toasts';
 import type { BasicToastNotification } from './toast-types';
 import type { StyleProp, ViewStyle } from 'react-native';
@@ -18,18 +18,22 @@ export const ToastContainer = function ToastContainer<T extends BasicToastNotifi
 
   const ToastUI = props.ToastUIComponent;
 
-  return toasts.map(toast => {
-    const toastInfo = getToastInfo(toast.id);
-    return (
-      <Toast
-        key={toast.id}
-        toastInfo={toastInfo}
-        onLayout={getOnLayoutHandler(toastInfo)}
-        {...toast}
-        style={[toast.containerStyle, props.toastContainerStyle]}
-      >
-        <ToastUI {...toast} testID={toast.testID || `${toast.type.toString()}ToastUI`} />
-      </Toast>
-    );
-  });
+  return (
+    <Fragment>
+      {toasts.map(toast => {
+        const toastInfo = getToastInfo(toast.id);
+        return (
+          <Toast
+            key={toast.id}
+            toastInfo={toastInfo}
+            onLayout={getOnLayoutHandler(toastInfo)}
+            {...toast}
+            style={[toast.containerStyle, props.toastContainerStyle]}
+          >
+            <ToastUI {...toast} testID={toast.testID || `${toast.type.toString()}ToastUI`} />
+          </Toast>
+        );
+      })}
+    </Fragment>
+  );
 };
