@@ -104,6 +104,7 @@
       "requireBranch": "master"
     },
     "npm": {
+      "access": "public",
       "publish": true,
       "versionArgs": [
         "--allow-same-version",
