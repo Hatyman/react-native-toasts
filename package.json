@@ -107,8 +107,7 @@
       "access": "public",
       "publish": true,
       "versionArgs": [
-        "--allow-same-version",
-        "--workspaces-update=false"
+        "--allow-same-version"
       ]
     },
     "github": {
