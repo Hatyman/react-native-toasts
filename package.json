@@ -1,6 +1,6 @@
 {
   "name": "@hatyman/react-native-toasts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React-native library for in-app toasts displaying with a wide customization",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
